@@ -57,7 +57,9 @@ body{
     height: 70%;
 }
 .key{
+    background-color: var(--grey);
     border-radius: 50%;
+    color: var(--white);
     font-size: 2.4rem;
 }
 
