@@ -32,7 +32,9 @@ body{
     height: 50%;
 }
 .lower-input{
+    width: 85%;
     height: 50%;
+    float: right;
 }
 .link{
     background-color: var(--grey);
