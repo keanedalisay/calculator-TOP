@@ -56,7 +56,10 @@ body{
 .keypad-frame{
     height: 70%;
 }
-
+.key{
+    border-radius: 50%;
+    font-size: 2.4rem;
+}
 
 .sr-only{
     font-size: 0;
