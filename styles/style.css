@@ -39,6 +39,9 @@ body{
 .link{
     background-color: var(--grey);
 }
+.link > object{
+    width: 1.5rem;
+}
 
 
 .keypad-frame{
