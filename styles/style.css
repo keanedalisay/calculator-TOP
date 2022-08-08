@@ -11,4 +11,6 @@ html{
 
 .calculator-frame{
     border: 1px solid black;
+    width: min(100vw, 36rem);
+    height: min(100vh, 49rem);
 }
