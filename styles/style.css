@@ -19,6 +19,7 @@ body{
 
 .calculator-frame{
     border: 1px solid black;
+    padding: 0 clamp(1.5rem, 3vw, 2rem);
     width: min(100vw, 36rem);
     height: min(100vh, 49rem);
 }
@@ -28,6 +29,9 @@ body{
     height: max(30%, 12rem);
 }
 .upper-input{
+    height: 50%;
+}
+.lower-input{
     height: 50%;
 }
 
