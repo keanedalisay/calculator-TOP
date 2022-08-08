@@ -8,6 +8,11 @@ html{
     font-family: 'Poppins', Helvetica, Arial, sans-serif;
     font-size: 10px;
 }
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
 
 .calculator-frame{
     border: 1px solid black;
