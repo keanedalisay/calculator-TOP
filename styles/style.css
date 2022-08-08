@@ -39,3 +39,8 @@ body{
 .keypad-frame{
     height: 70%;
 }
+
+
+.sr-only{
+    font-size: 0;
+}
