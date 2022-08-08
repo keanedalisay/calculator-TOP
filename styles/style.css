@@ -22,3 +22,6 @@ body{
     width: min(100vw, 36rem);
     height: min(100vh, 49rem);
 }
+.input-frame{
+    height: max(30%, 12rem);
+}
