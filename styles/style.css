@@ -25,3 +25,6 @@ body{
 .input-frame{
     height: max(30%, 12rem);
 }
+.keypad-frame{
+    height: 70%;
+}
