@@ -42,6 +42,7 @@ body{
     padding: 1rem 0.9rem;
 }
 .link > object{
+    pointer-events: none;
     width: 1.5rem;
 }
 
