@@ -9,6 +9,7 @@ html{
     font-size: 10px;
 }
 body{
+    background-color: var(--black);
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -18,7 +19,6 @@ body{
 
 
 .calculator-frame{
-    border: 1px solid black;
     padding: clamp(0.5rem, 2vw, 1rem) clamp(1.5rem, 3vw, 2rem);
     width: min(100vw, 36rem);
     height: min(100vh, 49rem);
