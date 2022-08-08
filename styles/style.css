@@ -34,6 +34,9 @@ body{
 .lower-input{
     height: 50%;
 }
+.link{
+    background-color: var(--grey);
+}
 
 
 .keypad-frame{
