@@ -55,6 +55,9 @@ body{
 
 .keypad-frame{
     height: 70%;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(4, 5.8rem);
 }
 .key{
     background-color: var(--grey);
