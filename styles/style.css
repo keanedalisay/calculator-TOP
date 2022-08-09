@@ -19,13 +19,18 @@ body{
 
 
 .calculator-frame{
-    padding: clamp(0.5rem, 2vw, 1rem) clamp(1.5rem, 3vw, 2rem);
+    padding: 1.1rem 0;
     width: min(100vw, 36rem);
     height: min(100vh, 49rem);
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 
 .input-frame{
+    width: 85%;
     height: max(30%, 12rem);
 }
 .upper-input{
@@ -58,6 +63,7 @@ body{
 
 
 .keypad-frame{
+    width: 85%;
     height: 70%;
     display: grid;
     gap: 1rem;
