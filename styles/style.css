@@ -30,12 +30,12 @@ body{
 .calculator-frame::before{
     background-color: var(--grey);
     width: 90%;
-    height: min(1vw, .4rem);
+    height: min(1vw, .3rem);
     border-radius: 1rem;
     display: block;
     content: '';
     position: relative;
-    top: 13.5rem;
+    top: min(36vh, 13.8rem);
 }
 
 
