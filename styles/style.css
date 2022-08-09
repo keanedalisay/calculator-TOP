@@ -97,9 +97,19 @@ body{
 }
 .key{
     background-color: var(--grey);
+    position: relative;
     border-radius: 50%;
     color: var(--white);
     font-size: 1.5rem;
+    transition: ease-in-out .08s;
+    transform: scale(1);
+}
+.key:active{
+    transform: scale(0.9);
+    box-shadow: inset 0rem 0rem 2rem var(--white);
+}
+.key > span{
+    text-align: center;
 }
 .clear-key{
     color: var(--red);
