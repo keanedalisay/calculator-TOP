@@ -1,6 +1,7 @@
 
 const equationBox = document.querySelector('.upper-input');
 const equationInput = document.querySelector('.upper-input > span');
+const resultInput = document.querySelector('.lower-input > span');
 
 equationInput.textContent = 0;
 
@@ -40,4 +41,13 @@ function inputNumber(e){
 
 function onTextCursor (){
     return equationBox.style.setProperty('--off', 'on-text-cursor ease-in-out 1s infinite');
+}
+
+
+const clearKey = document.querySelector('.clear-key');
+clearKey.addEventListener('mousedown', clearInput);
+
+function clearInput(e){
+    equationInput.textContent = 0;
+    resultInput.textContent = '';
 }
