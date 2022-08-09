@@ -1,0 +1,30 @@
+
+const equationBox = document.querySelector('.upper-input');
+const equationInput = document.querySelector('.upper-input > span');
+
+equationInput.textContent = 0;
+
+const textCursor = window.getComputedStyle(equationInput, '::after');
+
+const numKeys = document.querySelectorAll('.num-key');
+const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+numKeys.forEach((numKey) => {
+    numKey.addEventListener('mousedown', inputNumber);
+});
+
+function inputNumber(e){
+    for(const num of numbers){
+        if (num == e.target.textContent){
+            equationInput.textContent += num;
+            equationBox.style.setProperty('--off', 'none');
+            setTimeout(onTextCursor, 500);
+        } else {
+            continue;
+        }
+    }
+}
+
+function onTextCursor (){
+    return equationBox.style.setProperty('--off', 'on-text-cursor ease-in-out 1s infinite');
+}
