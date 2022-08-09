@@ -11,7 +11,7 @@ const numKeys = document.querySelectorAll('.num-key');
 const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 numKeys.forEach((numKey) => {
-    numKey.addEventListener('mousedown', inputNumber);
+    numKey.addEventListener('click', inputNumber);
 });
 
 function inputNumber(e){
@@ -45,7 +45,7 @@ function onTextCursor (){
 
 
 const clearKey = document.querySelector('.clear-key');
-clearKey.addEventListener('mousedown', clearInput);
+clearKey.addEventListener('click', clearInput);
 
 function clearInput(e){
     equationInput.textContent = 0;
@@ -53,7 +53,7 @@ function clearInput(e){
 }
 
 const deleteKey = document.querySelector('.del-key');
-deleteKey.addEventListener('mousedown', deleteNumber);
+deleteKey.addEventListener('click', deleteNumber);
 
 function deleteNumber(e){
     const inputLength = equationInput.textContent.length;
