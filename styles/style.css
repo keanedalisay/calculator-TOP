@@ -63,9 +63,7 @@ body{
     position: relative;
     top: -3.25rem;
     right: .3rem;
-}
-.on-text-input{
-    animation: on-text-cursor ease-in-out 1s infinite;
+    animation: var(--off, on-text-cursor ease-in-out 1s infinite);
 }
 .upper-input > span{
     vertical-align: -50%;
