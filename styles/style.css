@@ -30,20 +30,35 @@ body{
 
 
 .input-frame{
-    width: 85%;
+    width: 80%;
     height: max(30%, 12rem);
 }
 .upper-input{
     height: 50%;
     color: var(--white);
+    overflow: hidden;
+    white-space: nowrap;
+    direction: rtl;
+    text-align: right;
     font-size: 2.4rem;
+
+}
+.upper-input > span{
+    vertical-align: -50%;
 }
 .lower-input{
-    width: 85%;
+    width: 80%;
     height: 50%;
     float: right;
+    overflow: hidden;
+    white-space: nowrap;
+    direction: rtl;
+    text-align: right;
     color: var(--grey);
     font-size: 2.4rem;
+}
+.lower-input > span{
+    vertical-align: -50%;
 }
 .link{
     background-color: var(--grey);
