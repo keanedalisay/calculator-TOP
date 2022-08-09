@@ -51,3 +51,15 @@ function clearInput(e){
     equationInput.textContent = 0;
     resultInput.textContent = '';
 }
+
+const deleteKey = document.querySelector('.del-key');
+deleteKey.addEventListener('mousedown', deleteNumber);
+
+function deleteNumber(e){
+    const inputLength = equationInput.textContent.length;
+    if (inputLength == 1){
+        equationInput.textContent = 0;
+    } else {
+        equationInput.textContent = equationInput.textContent.slice(0, inputLength - 1);
+    }
+}
