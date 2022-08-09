@@ -76,6 +76,17 @@ body{
     color: var(--white);
     font-size: clamp(1.5rem, 3vw, 2rem);
 }
+.clear-key{
+    background-color: var(--red);
+    color: var(--grey);
+}
+.oper-key{
+    color: var(--green);
+}
+.answer-key{
+    background-color: var(--green);
+    color: var(--grey);
+}
 
 .sr-only{
     font-size: 0;
