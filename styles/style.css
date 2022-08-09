@@ -88,7 +88,7 @@ body{
 
 
 .keypad-frame{
-    padding: 1.1rem 0;
+    padding: 2.2rem 1.5rem;
     width: 85%;
     height: 70%;
     display: grid;
@@ -99,11 +99,10 @@ body{
     background-color: var(--grey);
     border-radius: 50%;
     color: var(--white);
-    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-size: 1.5rem;
 }
 .clear-key{
-    background-color: var(--red);
-    color: var(--grey);
+    color: var(--red);
 }
 .oper-key{
     color: var(--green);
