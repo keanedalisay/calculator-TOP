@@ -27,6 +27,16 @@ body{
     justify-content: center;
     align-items: center;
 }
+.calculator-frame::before{
+    background-color: var(--grey);
+    width: 90%;
+    height: min(1vw, .4rem);
+    border-radius: 1rem;
+    display: block;
+    content: '';
+    position: relative;
+    top: 13.5rem;
+}
 
 
 .input-frame{
