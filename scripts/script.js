@@ -14,13 +14,26 @@ numKeys.forEach((numKey) => {
 });
 
 function inputNumber(e){
-    for(const num of numbers){
-        if (num == e.target.textContent){
-            equationInput.textContent += num;
-            equationBox.style.setProperty('--off', 'none');
-            setTimeout(onTextCursor, 500);
-        } else {
-            continue;
+    if (equationInput.textContent == 0){
+        equationInput.textContent = '';
+        for(const num of numbers){
+            if (num == e.target.textContent){
+                equationInput.textContent += num;
+                equationBox.style.setProperty('--off', 'none');
+                setTimeout(onTextCursor, 500);
+            } else {
+                continue;
+            }
+        }
+    } else {
+        for(const num of numbers){
+            if (num == e.target.textContent){
+                equationInput.textContent += num;
+                equationBox.style.setProperty('--off', 'none');
+                setTimeout(onTextCursor, 500);
+            } else {
+                continue;
+            }
         }
     }
 }
