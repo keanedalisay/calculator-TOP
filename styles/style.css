@@ -62,7 +62,7 @@ body{
     content: '';
     position: relative;
     top: -3.25rem;
-    right: 0rem;
+    right: .3rem;
 }
 .on-text-input{
     animation: on-text-cursor ease-in-out 1s infinite;
