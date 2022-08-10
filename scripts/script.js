@@ -80,7 +80,7 @@ function inputOperator (e){
     } else {
         for (const operator of operators){
             if (operator == e.target.textContent.trim()){
-                equationInput.textContent += operator;
+                equationInput.textContent += ` ${operator} `;
                 equationBox.style.setProperty('--off', 'none');
                 setTimeout(onTextCursor, 500);
             } else {
