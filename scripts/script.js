@@ -18,7 +18,7 @@ function inputNumber(e){
     if (equationInput.textContent == 0){
         equationInput.textContent = '';
         for(const num of numbers){
-            if (num == e.target.textContent){
+            if (num == e.target.textContent.trim()){
                 equationInput.textContent += num;
                 equationBox.style.setProperty('--off', 'none');
                 setTimeout(onTextCursor, 500);
@@ -28,7 +28,7 @@ function inputNumber(e){
         }
     } else {
         for(const num of numbers){
-            if (num == e.target.textContent){
+            if (num == e.target.textContent.trim()){
                 equationInput.textContent += num;
                 equationBox.style.setProperty('--off', 'none');
                 setTimeout(onTextCursor, 500);
@@ -61,5 +61,31 @@ function deleteNumber(e){
         equationInput.textContent = 0;
     } else {
         equationInput.textContent = equationInput.textContent.slice(0, inputLength - 1);
+        equationBox.style.setProperty('--off', 'none');
+        setTimeout(onTextCursor, 500);
+    }
+}
+
+
+const operKeys = document.querySelectorAll('.oper-key');
+const operators = ['+', '-', '*', '/'];
+
+operKeys.forEach((operKey) => {
+    operKey.addEventListener('click', inputOperator);
+})
+
+function inputOperator (e){
+    if (equationInput.textContent == 0){
+        equationInput.textContent = 0;
+    } else {
+        for (const operator of operators){
+            if (operator == e.target.textContent.trim()){
+                equationInput.textContent += operator;
+                equationBox.style.setProperty('--off', 'none');
+                setTimeout(onTextCursor, 500);
+            } else {
+                continue;
+            }
+        }
     }
 }
