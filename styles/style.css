@@ -66,6 +66,8 @@ body{
     animation: var(--off, on-text-cursor ease-in-out 1s infinite);
 }
 .upper-input > span{
+    direction: ltr;
+    display: inline-block;
     vertical-align: -50%;
 }
 .lower-input{
@@ -81,6 +83,8 @@ body{
     font-size: 2.4rem;
 }
 .lower-input > span{
+    direction: ltr;
+    display: inline-block;
     vertical-align: -50%;
 }
 .link{
