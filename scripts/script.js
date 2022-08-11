@@ -59,6 +59,10 @@ function deleteNumber(e){
     const inputLength = equationInput.textContent.length;
     if (inputLength == 1){
         equationInput.textContent = 0;
+    } else if (equationInput.textContent[inputLength - 2] == ' '){
+        equationInput.textContent = equationInput.textContent.slice(0, inputLength - 2);
+        equationBox.style.setProperty('--off', 'none');
+        setTimeout(onTextCursor, 500);
     } else {
         equationInput.textContent = equationInput.textContent.slice(0, inputLength - 1);
         equationBox.style.setProperty('--off', 'none');
