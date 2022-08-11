@@ -89,3 +89,35 @@ function inputOperator (e){
         }
     }
 }
+
+const charKeys = document.querySelectorAll('.char-key');
+const characters = ['(', ')', '.'];
+
+charKeys.forEach((charKey) => {
+    charKey.addEventListener('click', inputChar);
+})
+
+function inputChar(e){
+    if (equationInput.textContent == 0){
+        equationInput.textContent = '';
+        for (const character of characters){
+            if (character == e.target.textContent.trim()){
+                equationInput.textContent += `${character}`;
+                equationBox.style.setProperty('--off', 'none');
+                setTimeout(onTextCursor, 500);
+            } else {
+                continue;
+            }
+        }
+    } else {
+        for (const character of characters){
+            if (character == e.target.textContent.trim()){
+                equationInput.textContent += `${character}`;
+                equationBox.style.setProperty('--off', 'none');
+                setTimeout(onTextCursor, 500);
+            } else {
+                continue;
+            }
+        }
+    }
+}
