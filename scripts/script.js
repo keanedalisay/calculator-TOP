@@ -20,7 +20,9 @@ function inputNumber(e){
         for(const num of numbers){
             if (num == e.target.textContent.trim()){
                 equationInput.textContent += num;
+                equationInput.classList.remove('answer')
                 equationBox.style.setProperty('--off', 'none');
+                resultInput.textContent = answer();
                 setTimeout(onTextCursor, 500);
             } else {
                 continue;
@@ -30,7 +32,9 @@ function inputNumber(e){
         for(const num of numbers){
             if (num == e.target.textContent.trim()){
                 equationInput.textContent += num;
+                equationInput.classList.remove('answer')
                 equationBox.style.setProperty('--off', 'none');
+                resultInput.textContent = answer();
                 setTimeout(onTextCursor, 500);
             } else {
                 continue;
@@ -49,6 +53,7 @@ clearKey.addEventListener('click', clearInput);
 
 function clearInput(e){
     equationInput.textContent = 0;
+    equationInput.classList.remove('answer')
     resultInput.textContent = '';
 }
 
@@ -59,13 +64,19 @@ function deleteNumber(e){
     const inputLength = equationInput.textContent.length;
     if (inputLength == 1){
         equationInput.textContent = 0;
+        equationInput.classList.remove('answer')
+        resultInput.textContent = answer();
     } else if (equationInput.textContent[inputLength - 2] == ' '){
         equationInput.textContent = equationInput.textContent.slice(0, inputLength - 2);
+        equationInput.classList.remove('answer')
         equationBox.style.setProperty('--off', 'none');
+        resultInput.textContent = answer();
         setTimeout(onTextCursor, 500);
     } else {
         equationInput.textContent = equationInput.textContent.slice(0, inputLength - 1);
+        equationInput.classList.remove('answer')
         equationBox.style.setProperty('--off', 'none');
+        resultInput.textContent = answer();
         setTimeout(onTextCursor, 500);
     }
 }
@@ -81,11 +92,15 @@ operKeys.forEach((operKey) => {
 function inputOperator (e){
     if (equationInput.textContent == 0){
         equationInput.textContent = 0;
+        equationInput.classList.remove('answer');
+        resultInput.textContent = answer();
     } else {
         for (const operator of operators){
             if (operator == e.target.textContent.trim()){
                 equationInput.textContent += ` ${operator} `;
+                equationInput.classList.remove('answer')
                 equationBox.style.setProperty('--off', 'none');
+                resultInput.textContent = answer();
                 setTimeout(onTextCursor, 500);
             } else {
                 continue;
@@ -107,7 +122,9 @@ function inputChar(e){
         for (const character of characters){
             if (character == e.target.textContent.trim()){
                 equationInput.textContent += `${character}`;
+                equationInput.classList.remove('answer')
                 equationBox.style.setProperty('--off', 'none');
+                resultInput.textContent = answer();
                 setTimeout(onTextCursor, 500);
             } else {
                 continue;
@@ -117,7 +134,9 @@ function inputChar(e){
         for (const character of characters){
             if (character == e.target.textContent.trim()){
                 equationInput.textContent += `${character}`;
+                equationInput.classList.remove('answer')
                 equationBox.style.setProperty('--off', 'none');
+                resultInput.textContent = answer();
                 setTimeout(onTextCursor, 500);
             } else {
                 continue;
@@ -125,3 +144,68 @@ function inputChar(e){
         }
     }
 }
+
+const answerKey = document.querySelector('.answer-key');
+
+answerKey.addEventListener('click', displayAnswer);
+
+function equation(){
+    return equationInput.textContent;
+}
+
+function displayAnswer(e){
+    if (equationInput.textContent == 0){
+        equationInput.textContent = 0;
+    } else if (equationInput.textContent.length < 5){
+        return equation();
+    } else {
+        equationInput.textContent = answer();
+        equationInput.classList.add('answer');
+        resultInput.textContent = '';
+    }
+}
+
+function answer(){
+    let equation = equationInput.textContent.split(' ').map((number) => {
+        if ((isNaN(+number) == true)){
+          return number;
+        } else {
+          return +number;
+        }
+      });
+    
+    let operator = '';
+
+    const finalAnswer = equation.reduce((totalValue, nxtValue) => {
+        if (operator == ''){
+            if (nxtValue == '+'){
+                operator = nxtValue;
+                return totalValue;
+            } else if (nxtValue == '-'){
+                operator = nxtValue;
+                return totalValue;
+            } else if (nxtValue == '*'){
+                operator = nxtValue;
+                return totalValue;
+            } else if (nxtValue == '/'){
+                operator = nxtValue;
+                return totalValue;
+            } 
+        } else if (operator == '+'){
+            operator = '';
+            return totalValue += nxtValue;
+        } else if (operator == '-'){
+          operator = '';
+          return totalValue -= nxtValue;
+        } else if (operator == '*'){
+          operator = '';
+          return totalValue *= nxtValue;
+        } else if (operator == '/'){
+          operator = '';
+          return totalValue /= nxtValue;
+        }
+    });
+
+    return finalAnswer;
+}
+
