@@ -155,6 +155,10 @@ body{
     font-size: 0;
 }
 
+.answer{
+    color: var(--green);
+}
+
 @keyframes on-text-cursor {
     25%{
         visibility: hidden;
