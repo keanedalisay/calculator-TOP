@@ -91,9 +91,18 @@ operKeys.forEach((operKey) => {
 
 function inputOperator (e){
     if (equationInput.textContent == 0){
-        equationInput.textContent = 0;
-        equationInput.classList.remove('answer');
-        resultInput.textContent = answer();
+        equationInput.textContent = '';
+        for (const operator of operators){
+            if (operator == e.target.textContent.trim()){
+                equationInput.textContent += ` ${operator} `;
+                equationInput.classList.remove('answer')
+                equationBox.style.setProperty('--off', 'none');
+                resultInput.textContent = answer();
+                setTimeout(onTextCursor, 500);
+            } else {
+                continue;
+            }
+        }
     } else {
         for (const operator of operators){
             if (operator == e.target.textContent.trim()){
