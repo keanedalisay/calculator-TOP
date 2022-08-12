@@ -224,9 +224,11 @@ function answer(){
     });
 
     if (finalAnswer == undefined || finalAnswer == null 
-        || finalAnswer == NaN || finalAnswer == Infinity 
+        || isNaN(finalAnswer) == true || finalAnswer == Infinity 
         || finalAnswer == -Infinity){
         return 'Syntax Error'
+    } else if (Number.isInteger(finalAnswer) == false){
+        return finalAnswer.toFixed(2);
     } else {
         return finalAnswer;
     }
