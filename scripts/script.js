@@ -1,11 +1,15 @@
-
 const equationBox = document.querySelector('.upper-input');
 const equationInput = document.querySelector('.upper-input > span');
 const resultInput = document.querySelector('.lower-input > span');
-
 equationInput.textContent = 0;
 
+
 const textCursor = window.getComputedStyle(equationInput, '::after');
+
+function onTextCursor (){
+    return equationBox.style.setProperty('--off', 'on-text-cursor ease-in-out 1s infinite');
+}
+
 
 const numKeys = document.querySelectorAll('.num-key');
 const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -42,44 +46,6 @@ function inputNumber(e){
                 continue;
             }
         }
-    }
-}
-
-function onTextCursor (){
-    return equationBox.style.setProperty('--off', 'on-text-cursor ease-in-out 1s infinite');
-}
-
-
-const clearKey = document.querySelector('.clear-key');
-clearKey.addEventListener('click', clearInput);
-
-function clearInput(e){
-    equationInput.textContent = 0;
-    equationInput.classList.remove('answer')
-    resultInput.textContent = '';
-}
-
-const deleteKey = document.querySelector('.del-key');
-deleteKey.addEventListener('click', deleteNumber);
-
-function deleteNumber(e){
-    const inputLength = equationInput.textContent.length;
-    if (inputLength == 1){
-        equationInput.textContent = 0;
-        equationInput.classList.remove('answer')
-        resultInput.textContent = answer();
-    } else if (equationInput.textContent[inputLength - 2] == ' '){
-        equationInput.textContent = equationInput.textContent.slice(0, inputLength - 2);
-        equationInput.classList.remove('answer')
-        equationBox.style.setProperty('--off', 'none');
-        resultInput.textContent = answer();
-        setTimeout(onTextCursor, 500);
-    } else {
-        equationInput.textContent = equationInput.textContent.slice(0, inputLength - 1);
-        equationInput.classList.remove('answer')
-        equationBox.style.setProperty('--off', 'none');
-        resultInput.textContent = answer();
-        setTimeout(onTextCursor, 500);
     }
 }
 
@@ -122,6 +88,7 @@ function inputOperator (e){
     }
 }
 
+
 const charKeys = document.querySelectorAll('.char-key');
 const characters = ['(', ')', '.'];
 
@@ -160,8 +127,43 @@ function inputChar(e){
     }
 }
 
-const answerKey = document.querySelector('.answer-key');
 
+const clearKey = document.querySelector('.clear-key');
+clearKey.addEventListener('click', clearInput);
+
+function clearInput(e){
+    equationInput.textContent = 0;
+    equationInput.classList.remove('answer')
+    resultInput.textContent = '';
+}
+
+
+const deleteKey = document.querySelector('.del-key');
+deleteKey.addEventListener('click', deleteNumber);
+
+function deleteNumber(e){
+    const inputLength = equationInput.textContent.length;
+    if (inputLength == 1){
+        equationInput.textContent = 0;
+        equationInput.classList.remove('answer')
+        resultInput.textContent = answer();
+    } else if (equationInput.textContent[inputLength - 2] == ' '){
+        equationInput.textContent = equationInput.textContent.slice(0, inputLength - 2);
+        equationInput.classList.remove('answer')
+        equationBox.style.setProperty('--off', 'none');
+        resultInput.textContent = answer();
+        setTimeout(onTextCursor, 500);
+    } else {
+        equationInput.textContent = equationInput.textContent.slice(0, inputLength - 1);
+        equationInput.classList.remove('answer')
+        equationBox.style.setProperty('--off', 'none');
+        resultInput.textContent = answer();
+        setTimeout(onTextCursor, 500);
+    }
+}
+
+
+const answerKey = document.querySelector('.answer-key');
 answerKey.addEventListener('click', displayAnswer);
 
 function equation(){
