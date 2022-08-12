@@ -15,7 +15,9 @@ numKeys.forEach((numKey) => {
 });
 
 function inputNumber(e){
-    if (equationInput.textContent == 0){
+    if (equationInput.textContent == 0 
+        || equationInput.textContent == 'NaN'
+        || equationInput.textContent == 'Syntax Error'){
         equationInput.textContent = '';
         for(const num of numbers){
             if (num == e.target.textContent.trim()){
@@ -90,7 +92,9 @@ operKeys.forEach((operKey) => {
 })
 
 function inputOperator (e){
-    if (equationInput.textContent == 0){
+    if (equationInput.textContent == 0 
+        || equationInput.textContent == 'NaN'
+        || equationInput.textContent == 'Syntax Error'){
         equationInput.textContent = '';
         for (const operator of operators){
             if (operator == e.target.textContent.trim()){
@@ -126,7 +130,9 @@ charKeys.forEach((charKey) => {
 })
 
 function inputChar(e){
-    if (equationInput.textContent == 0){
+    if (equationInput.textContent == 0 
+        || equationInput.textContent == 'NaN'
+        || equationInput.textContent == 'Syntax Error'){
         equationInput.textContent = '';
         for (const character of characters){
             if (character == e.target.textContent.trim()){
@@ -163,7 +169,9 @@ function equation(){
 }
 
 function displayAnswer(e){
-    if (equationInput.textContent == 0){
+    if (equationInput.textContent == 0 
+        || equationInput.textContent == 'NaN'
+        || equationInput.textContent == 'Syntax Error'){
         equationInput.textContent = 0;
     } else if (equationInput.textContent.length < 5){
         return equation();
@@ -215,6 +223,12 @@ function answer(){
         }
     });
 
-    return finalAnswer;
+    if (finalAnswer == undefined || finalAnswer == null 
+        || finalAnswer == NaN || finalAnswer == Infinity 
+        || finalAnswer == -Infinity){
+        return 'Syntax Error'
+    } else {
+        return finalAnswer;
+    }
 }
 
