@@ -147,8 +147,8 @@ function deleteNumber(e){
         equationInput.textContent = 0;
         equationInput.classList.remove('answer')
         resultInput.textContent = answer();
-    } else if (equationInput.textContent[inputLength - 2] == ' '){
-        equationInput.textContent = equationInput.textContent.slice(0, inputLength - 2);
+    } else if (equationInput.textContent[inputLength - 1] == ' '){
+        equationInput.textContent = equationInput.textContent.slice(0, inputLength - 3);
         equationInput.classList.remove('answer')
         equationBox.style.setProperty('--off', 'none');
         resultInput.textContent = answer();
