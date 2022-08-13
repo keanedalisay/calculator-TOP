@@ -28,6 +28,8 @@ Feel free to check it out through this link: https://keanedalisay.github.io/calc
 
 And here is an image preview of it:
 
+![Calculator Preview](https://user-images.githubusercontent.com/101083161/184306784-cfb4570d-580b-45ba-a060-c789d427fc80.jpeg)
+
 ## License
 
 Copyright (c) 2022 Keane Dalisay
